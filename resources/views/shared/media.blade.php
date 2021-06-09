@@ -6,7 +6,7 @@
                 <a href="http://www.forbes.ru/tehnologii/345973-novye-kriptovalyuty-kak-v-nih-investirovat-i-pochemu-im-nuzhen-pravovoy-status" target="_blank" class="img forbes"></a>
             </div>
             <div class="three columns">
-                <a href="https://www.google.com/url?q=https://finance.yahoo.com/news/token-fund-founders-set-october-151900653.html&sa=D&ust=1507053174506000&usg=AFQjCNF-lHTU5afkVPFOXoX9g7DXedyIkw" target="_blank" class="img yahoo"></a>
+                <a href="https://finance.yahoo.com/news/token-fund-founders-set-october-151900653.html" target="_blank" class="img yahoo"></a>
             </div>
             <div class="three columns">
                 <a href="http://www.marketwatch.com/story/the-token-fund-welcomes-chris-skinner-on-board-2017-09-13" target="_blank" class="img marketwatch"></a>
@@ -20,14 +20,17 @@
             <div class="three columns">
                 <a href="https://www.cryptocoinsnews.com/ethereum-used-ctfs-coin-traded-funds-benefits/" target="_blank" class="img cryptocoinsnews"></a>
             </div>
+
             <div class="three columns">
                 <a href="http://bitcoinist.com/interview-with-token-fund-the-etf-alternative-for-cryptocurrency-investing/" target="_blank" class="img bitcoinist"></a>
             </div>
             <div class="three columns">
-                <a href="http://news.btc123.com/news/detail?id=7413" target="_blank" class="img btc123"></a>
+                <!--<a href="http://news.btc123.com/news/detail?id=7413" target="_blank" class="img btc123"></a>-->
+                <a href="https://www.coinspeaker.com/2017/09/28/the-token-fund-founders-set-october-launch-for-tokenbox-platform-for-crypto-assets-fund-creation/" target="_blank" class="img coinspeaker"></a>
             </div>
             <div class="three columns">
-                <a href="https://cryptopotato.com/miners-dilemma-sell-mined-tokens-fiat-invest/" target="_blank" class="img crypto-potato"></a>
+                <!--<a href="https://cryptopotato.com/miners-dilemma-sell-mined-tokens-fiat-invest/" target="_blank" class="img crypto-potato"></a> -->
+                <a href="https://www.bitsonline.com/tokenbox-ico-trading-compliance/" target="_blank" class="img bitsonline"></a>
             </div>
             <!--<div class="three columns">
                 <a href="http://www.vesti.ru/videos/show/vid/723985/" target="_blank" class="img russia24"></a>
@@ -41,7 +44,7 @@
             <div class="slider">
                 <div>
                     <a href="http://www.forbes.ru/tehnologii/345973-novye-kriptovalyuty-kak-v-nih-investirovat-i-pochemu-im-nuzhen-pravovoy-status" target="_blank" class="img forbes"></a>
-	                <a href="https://www.google.com/url?q=https://finance.yahoo.com/news/token-fund-founders-set-october-151900653.html&sa=D&ust=1507053174506000&usg=AFQjCNF-lHTU5afkVPFOXoX9g7DXedyIkw" target="_blank" class="img yahoo"></a>
+                    <a href="https://finance.yahoo.com/news/token-fund-founders-set-october-151900653.html" target="_blank" class="img yahoo"></a>
                     <a href="http://www.marketwatch.com/story/the-token-fund-welcomes-chris-skinner-on-board-2017-09-13" target="_blank" class="img marketwatch"></a>
                 </div>
                 <div>
@@ -50,8 +53,10 @@
                     <a href="http://bitcoinist.com/interview-with-token-fund-the-etf-alternative-for-cryptocurrency-investing/" class="img bitcoinist"></a>
                 </div>
                 <div>
-                    <a href="http://news.btc123.com/news/detail?id=7413" target="_blank" class="img btc123"></a>
-                    <a href="https://cryptopotato.com/miners-dilemma-sell-mined-tokens-fiat-invest/" target="_blank" class="img crypto-potato"></a>
+                    <!--<a href="http://news.btc123.com/news/detail?id=7413" target="_blank" class="img btc123"></a>-->
+                    <!--<a href="https://cryptopotato.com/miners-dilemma-sell-mined-tokens-fiat-invest/" target="_blank" class="img crypto-potato"></a>-->
+                     <a href="https://www.coinspeaker.com/2017/09/28/the-token-fund-founders-set-october-launch-for-tokenbox-platform-for-crypto-assets-fund-creation/" target="_blank" class="img coinspeaker"></a>
+                    <a href="https://www.bitsonline.com/tokenbox-ico-trading-compliance/" target="_blank" class="img bitsonline"></a>
                 </div>
             </div>
         </div>

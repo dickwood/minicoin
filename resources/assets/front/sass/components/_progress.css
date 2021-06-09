@@ -34,10 +34,12 @@
 
 .progress-target {
   font-size: 24px;
+  white-space: nowrap; /* safari fix */
 }
 
 .section-distribution {
   background: url(../img/grid-white.svg) top no-repeat,#f6f6f8;
+  background-size: 100% auto;
 }
 
 @mixin bp tablet {
