@@ -46,6 +46,11 @@
       background-size: 136px auto;
     }
 
+    &.yahoo {
+      background-image: url("../img/media/yahoo.png");
+      background-size: 140px auto;
+    }
+
     &.bitcoinist {
       background-image: url("../img/media/bitcoinist.png");
       background-size: 66px auto;
@@ -84,6 +89,16 @@
     &.forbes {
       background-image: url("../img/media/forbes.svg");
       background-size: 170px auto;
+    }
+
+    &.coinspeaker {
+      background-image: url("../img/media/coinspeaker.png");
+      background-size: 174px auto;
+    }
+
+    &.bitsonline {
+      background-image: url("../img/media/bitsonline.png");
+      background-size: 158px auto;
     }
 
     @media (min-width: 750px) and (max-width: 900px) {

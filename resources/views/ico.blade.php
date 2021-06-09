@@ -1,29 +1,50 @@
 @extends('shared/layout')
 
-@section('shared/content')
-
+@section('content')
   <section class="topblock topblock-ico">
+    <div class="hamburger-icon" id="hamburger-icon">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </div>
+
+    <div class="mobile-nav js-scroll-nav">
+      <a href="/" class="logo">
+        <img src="/assets/front/img/logo.svg">
+      </a>
+
+      <ul>
+        <li><a href="#raised-token">Raised</a></li>
+        <li><a href="#token-distribution">Token Distribution</a></li>
+        <li><a href="#fact-sheat">Fact Sheet</a></li>
+        <li><a href="#join-crowdsale">How to Join</a></li>
+        <li>
+          @include('shared/langSwitcher')
+        </li>
+      </ul>
+    </div>
+
     <div class="wrapper">
       <header class="header">
-        <div class="row">
-          <div class="offset-by-one-sd logo two-sd three columns"></div>
+        <div class="header_logo">
+          <a href="/" class="logo">
+            <img class="logo" src="/assets/front/img/logo.svg">
+          </a>
+        </div>
 
-          <nav class="nav six columns" role="navigation">
-            <li><a href="#for-investors">Features</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#tech">Technology</a></li>
-            <li><a href="#team">Team & Advisors</a></li>
-          </nav>
+        <nav class="nav js-scroll-nav" role="navigation">
+          <li><a href="#raised-token">Raised</a></li>
+          <li><a href="#token-distribution">Token Distribution</a></li>
+          <li><a href="#fact-sheat">Fact Sheet</a></li>
+          <li><a href="#join-crowdsale">How to Join</a></li>
+        </nav>
 
-          <div class="lang two-sd three columns">
-            <ul>
-              <li class="active">
-                <a href="/docs/TBX-WhitePaper-Eng.pdf" target="_blank">
-                  White Paper
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="three columns">
+          <ul class="nav">
+            <li>
+              @include('shared/langSwitcher')
+            </li>
+          </ul>
         </div>
       </header>
 
@@ -42,7 +63,7 @@
     </div>
   </section>
 
-  <section class="section raised-token">
+  <section class="section raised-token" id="raised-token">
     <div class="wrapper">
       <h1> Total Raised </h1>
       <p>Pay only for what you use. No setup fees, no minimum usage.</p>
@@ -68,7 +89,7 @@
     </div>
   </section>
 
-  <section class="section section-distribution">
+  <section class="section section-distribution" id="token-distribution">
     <div class="wrapper">
       <h1>Token Distribution</h1>
       <p>Pay only for what you use. No setup fees, no minimum usage.</p>
@@ -96,7 +117,7 @@
     </div>
   </section>
 
-  <section class="section section-fact-sheet">
+  <!--<section class="section section-fact-sheet" id="fact-sheat">
     <div class="wrapper">
       <h1>Fact Sheet</h1>
 
@@ -130,9 +151,11 @@
         <dd>Price per token, locked. 1 token = 1 USD</dd>
       </dl>
     </div>
-  </section>
+  </section>-->
 
-  <section class="section section-join-crowdsale">
+  @include('shared/faq')
+
+  <section class="section section-join-crowdsale" id="join-crowdsale">
     <div class="wrapper">
       <h1>How to Join the Crowdsale</h1>
       <p>The process is simple and only takes ~5 minutes</p>
@@ -140,7 +163,17 @@
       <h2>4 easy steps</h2>
 
       <ol class="step-list">
-        <li><b>Make</b> sure you comply with our Terms & Conditions.</li><li><b>Create</b> a Zerion account.</li><li><b>Choose currency</b>and the amount of Tokens you want to purchase.</li><li><b>Send</b> the required amount to the specified wallet address and wait for 6 confirmations.</li><li><b>Congratulations!</b> You’ve just purchased TBX Tokens.</li>
+        <li>
+          <span><b>Make</b> sure you comply with our Terms & Conditions.</span>
+        </li><li>
+          <span><b>Create</b> a Zerion account.</span>
+        </li><li>
+          <span><b>Choose currency</b> and the amount of Tokens you want topurchase.</span>
+        </li><li>
+          <span><b>Send</b> the required amount to the specified wallet address and wait for 6 confirmations.</span>
+        </li><li>
+          <span><b>Congratulations!</b> You’ve just purchased TBX Tokens.</span>
+        </li>
       </ol>
 
       <a href="" class="button button-centred">Join the Crowdsale!</a>
@@ -154,25 +187,9 @@
     </div>
   </section>
 
-  <section class="section section-powered-by">
-    <div class="wrapper">
-      <h1>Powered by</h1>
-      <p>Tokenbox is powered by these awesome companies</p>
-
-      <div class="partner-logo">
-        <img src="" alt="">
-      </div>
-
-      <div class="partner-logo">
-        <img src="" alt="">
-      </div>
-    </div>
-  </section>
-
+  @include('shared/powered')
   @include('shared/roadmap')
-
   @include('shared/team')
 
 @endsection
 
-@include('shared/footer')
