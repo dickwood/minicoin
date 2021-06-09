@@ -1,19 +1,36 @@
 .countdown {
   text-align: center;
-
-  .button {
-    margin: 65px 0 0;
-
-    i {
-      font-size: 18px;
-      margin-right: 4px;
-      position: relative;
-    }
-  }
 }
 
 #countdown {
   margin: 0 -10px;
+}
+
+.countdown h1 {
+  margin: 0 0 8px;
+
+  sup {
+    position: relative;
+    top: -6px;
+    left: -1px;
+    font-size: 19px;
+  }
+}
+
+.countdown p {
+  margin: 0 0 63px;
+  color: #abb4bb;
+
+  a {
+    color: inherit;
+    font-weight: 700;
+    border-bottom: 1px dotted;
+
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
 }
 
 .countdown-item {
@@ -22,6 +39,7 @@
   width: 64px;
   margin: 4px;
   vertical-align: middle;
+  text-align: center;
 }
 
 .countdown-item svg {
@@ -31,7 +49,7 @@
 
 .countdown-item circle {
   stroke-dashoffset: 0;
-  stroke: #3434bb;
+  /* stroke: #3434bb; */
   stroke-width: 10px;
   fill: transparent;
   r: 26;
@@ -42,7 +60,7 @@
 
 .countdown-item .bar {
   stroke: #ee3d49;
-  transform: translateY(64px) rotate(-90deg);
+  transform: translateY(62px) rotate(-90deg);
 }
 
 .countdown-item .bar.loaded {
@@ -74,45 +92,33 @@
   opacity: 0.9;
 }
 
-@mixin lp tablet {
-  .countdown {
-    .button + .button {
-      margin-top: 20px;
-    }
+.countdown-mini {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.countdown-mini_title {
+  font-size: 26px;
+  text-align: center;
+
+  sup {
+    top: -6px;
+    font-size: 15px;
+  }
+
+  .tooltip {
+    right: auto;
   }
 }
 
 @mixin bp tablet {
-  #countdown {
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .countdown {
-    h1 {
-      margin-bottom: 75px;
-    }
-
-    .button {
-      width: auto;
-      margin: 58px 0 0;
-      vertical-align: top;
-
-      i {
-        font-size: 23px;
-      }
-    }
-
-    .button + .button {
-      margin-left: 35px;
-      min-width: 260px;
-      vertical-align: top;
-    }
-  }
-
   .countdown-item {
     width: 144px;
     margin: 2em 10px;
+  }
+  .countdown-item {
+    margin-right: 40px;
+    margin-left: 40px;
   }
 
   .countdown-item .bar {
@@ -139,11 +145,78 @@
     font-size: 58px;
     line-height: 144px;
   }
+
+  .countdown-mini {
+    .countdown-item {
+      width: 92px;
+    }
+
+    .countdown-item {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .countdown-item svg {
+      width: 92px;
+      height: 92px;
+    }
+
+    .countdown-item-text {
+      right: auto;
+      width: 92px;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 92px;
+    }
+
+    .countdown-item .bar {
+      transform: translateY(92px) rotate(-90deg);
+    }
+
+    .countdown-item circle {
+      r: 43;
+      cx: 46;
+      cy: 46;
+      stroke-dasharray: 270;
+      stroke-width: 5px;
+    }
+
+    .countdown-item-label {
+      margin-top: 0;
+    }
+
+    .countdown-item .inner-bar {
+      stroke: transparent;
+    }
+  }
+
+  .countdown-mini_title {
+    margin-top: -7px;
+  }
 }
 
 @mixin bp desktop {
-  .countdown-item {
-    margin-right: 40px;
-    margin-left: 40px;
+  .countdown-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .countdown-item {
+      display: flex;
+      width: auto;
+      align-items: center;
+    }
+
+    .countdown-item-label {
+      margin-left: 20px;
+    }
+
+    #countdown {
+      display: flex;
+    }
+  }
+
+  .countdown-mini_title {
+    margin-right: 20px;
   }
 }

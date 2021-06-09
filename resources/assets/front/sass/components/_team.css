@@ -4,10 +4,6 @@
   margin: auto;
 }
 
-.team .wrapper {
-  padding: 0;
-}
-
 .advisors {
   margin: 100px auto 0;
 
@@ -36,15 +32,6 @@
     width: 164px;
     height: 164px;
     border-radius: 50%;
-    @media (max-width: 749px) {
-      width: 80%;
-      height: 0;
-      padding-bottom: 80%;
-      .overlay a {
-        margin-top: 45%;
-      }
-    }
-
     overflow: hidden;
     position: relative;
     margin: 0 auto 15px;
@@ -53,9 +40,12 @@
     background-repeat:no-repeat;
     filter: grayscale(100%);
     transition: filter .2s ease;
-    &:hover {
+
+    &:hover,
+    &.active {
       filter: grayscale(0%);
     }
+
     .overlay {
       position: absolute;
       width: 100%;
@@ -76,11 +66,13 @@
         margin: 70px 10px auto;
         color: white;
         text-decoration: none;
+
         &:hover {
           opacity: .5;
         }
       }
-      &:hover {
+
+      &.active {
         opacity: 1;
       }
     }
@@ -96,5 +88,34 @@
     font-size: 1.6rem;
     color: $gray-light;
     line-height: 1.6;
+  }
+}
+
+@mixin lp tablet {
+  .members-list {
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .member {
+    white-space: normal;
+    margin: 0;
+
+    .img {
+      width: 80%;
+      height: 0;
+      padding-bottom: 80%;
+
+      .overlay a {
+        margin-top: 45%;
+      }
+    }
+  }
+}
+
+@mixin bp desktop {
+  .team .wrapper {
+    padding: 0;
   }
 }
