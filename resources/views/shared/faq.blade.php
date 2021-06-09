@@ -42,7 +42,7 @@
                 </label>
 
                 <div class="accordion-item-content">
-                    {{__('"Tokenized funds" will be a key element of the system. The Token Fund (https://thetoken.io) that is currently working is an example or prototype, it was created and developed by the Tokenbox team.')}}
+                    {!!__('"Tokenized funds" will be a key element of the system. <a href="https://thetoken.io" target="_blank">The Token Fund</a> that is currently working is an example or prototype, it was created and developed by the Tokenbox team.')!!}
                 </div>
             </div>
 
@@ -138,7 +138,7 @@
                 </label>
 
                 <div class="accordion-item-content">
-                    {{__('Investor\'s funds, excluding daily liquidity, are stored on multi-signature wallets behind a closed loop. All private keys are placed in a separate storage behind the contour of the platform, which allows to guarantee a higher degree of their safety.')}}
+                    {{__("Investor's funds, excluding daily liquidity, are stored on multi-signature wallets behind a closed loop. All private keys are placed in a separate storage behind the contour of the platform, which allows to guarantee a higher degree of their safety.")}}
                 </div>
             </div>
 
@@ -238,7 +238,7 @@
                 </label>
 
                 <div class="accordion-item-content">
-                    {{__('You can use only ETH address. You will receive TBX tokens after token distribution period on this address. Do not use exchanges or online services addresses, you will not be able to receive TBX there. If you do not own an ETH address, we recommend you to create one on MyEtherWallet: https://myetherwallet.com')}}
+                    {!!__('You can use only ETH address. You will receive TBX tokens after token distribution period on this address. Do not use exchanges or online services addresses, you will not be able to receive TBX there. If you do not own an ETH address, we recommend you to create one on &nbsp;<a href="https://myetherwallet.com" target="_blank">MyEtherWallet</a>.') !!}
                 </div>
             </div>
 
@@ -262,7 +262,7 @@
                 </label>
 
                 <div class="accordion-item-content">
-                    {!!__('Currently, there is still an opportunity to participate in a private pre-sale. If you are a fund or a major investor, you can&nbsp;<a href="mailto:hello@tokenbox.io">contact us</a>&nbsp;for a special offer. During the TGE crowdsale period bonuses are not provided.') !!}
+                    {!!__('Currently, there is still an opportunity to participate in a private sale. If you are a fund or a major investor, you can&nbsp;<a href="mailto:hello@tokenbox.io">contact us</a>&nbsp;for a special offer. During the TGE crowdsale period bonuses are not provided.') !!}
                 </div>
             </div>
         </div>

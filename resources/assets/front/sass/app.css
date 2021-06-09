@@ -49,6 +49,7 @@
 @import "components/lang";
 @import "components/modal";
 @import "components/notification";
+@import "components/video";
 
 .pay-with {
   margin-top: 110px;
@@ -177,5 +178,23 @@ section h1 {
   .powered-by-logos {
     flex-grow: 1;
     margin-left: 100px;
+
+    img {
+      opacity: 1;
+      transition: .4s opacity;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
 }
+
+.icon-bitcointalk {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/ico/btalk.svg);
+  width: 26px;
+  height: 26px;
+}
+

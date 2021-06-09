@@ -9,14 +9,10 @@
     </div>
 
     <div class="mobile-nav js-scroll-nav">
-      <a href="/" class="logo">
-        <img src="/assets/front/img/logo.svg">
-      </a>
-
       <ul>
         <li><a href="#raised-token">Raised</a></li>
         <li><a href="#token-distribution">Token Distribution</a></li>
-        <li><a href="#fact-sheat">Fact Sheet</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#join-crowdsale">How to Join</a></li>
         <li>
           @include('shared/langSwitcher')
@@ -35,22 +31,27 @@
         <nav class="nav js-scroll-nav" role="navigation">
           <li><a href="#raised-token">Raised</a></li>
           <li><a href="#token-distribution">Token Distribution</a></li>
-          <li><a href="#fact-sheat">Fact Sheet</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#join-crowdsale">How to Join</a></li>
         </nav>
 
-        <div class="three columns">
-          <ul class="nav">
-            <li>
-              @include('shared/langSwitcher')
-            </li>
-          </ul>
+        <div class="header_social">
+          <a href="https://bitcointalk.org/index.php?topic=2243307.0" class="icon-bitcointalk" target="_blank"></a>
+          <a href="http://tokenbox.slack.com" class="link slack" target="_blank"><i class="fa fa-slack"></i></a>
+          <a href="https://github.com/zeriontech/tokenbox-ico-website" title="Github" class="link github" target="_blank"><i class="fa fa-github-square"></i></a>
+          <a href="https://t.me/Tokenbox" class="link telegram" title="Telegram" target="_blank"><i class="fa fa-telegram"></i></a>
         </div>
+
+        <ul class="nav">
+          <li>
+            @include('shared/langSwitcher')
+          </li>
+        </ul>
       </header>
 
       <div class="countdown">
         <h1>
-          Tokenbox token crowdsale is now live!
+          Tokenbox crowdsale is now live!
         </h1>
 
         <div id="countdown"></div>
@@ -66,7 +67,7 @@
   <section class="section raised-token" id="raised-token">
     <div class="wrapper">
       <h1> Total Raised </h1>
-      <p>Pay only for what you use. No setup fees, no minimum usage.</p>
+      <p>The number of participants and the amounts collected.</p>
 
       <div class="progress">
         <div class="progress-current">
@@ -92,7 +93,7 @@
   <section class="section section-distribution" id="token-distribution">
     <div class="wrapper">
       <h1>Token Distribution</h1>
-      <p>Pay only for what you use. No setup fees, no minimum usage.</p>
+      <p>No more than 31,000,000 TBX will be released.</p>
 
       <div class="distribution">
         <div class="distribution-item distribution-item-token">
@@ -164,7 +165,7 @@
 
       <ol class="step-list">
         <li>
-          <span><b>Make</b> sure you comply with our Terms & Conditions.</span>
+          <span><b>Make sure</b> you comply with our Terms & Conditions.</span>
         </li><li>
           <span><b>Create</b> a Zerion account.</span>
         </li><li>
@@ -172,7 +173,7 @@
         </li><li>
           <span><b>Send</b> the required amount to the specified wallet address and wait for 6 confirmations.</span>
         </li><li>
-          <span><b>Congratulations!</b> You’ve just purchased TBX Tokens.</span>
+          <span><b>Congratulations!</b><br> You’ve just purchased TBX Tokens.</span>
         </li>
       </ol>
 
@@ -183,7 +184,7 @@
         <a href="">See the detailed guide.</a>
       </div>
 
-      <p>If you decide to purchase more tokens, repeat steps 4-5 by signing-in to your dashboard.</p>
+      <p>If you decide to purchase more tokens, repeat steps 3-4 by signing-in to your dashboard.</p>
     </div>
   </section>
 

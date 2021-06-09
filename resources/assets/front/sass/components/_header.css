@@ -11,27 +11,43 @@
 
 .header_logo {
   width: 200px;
+
+  .logo {
+    vertical-align: top;
+  }
 }
 
-.mobile-nav .logo,
+.header_right {
+  width: 200px;
+}
+
 .hamburger-icon {
   position: absolute;
   z-index: 4;
 }
 
-.mobile-nav .logo {
-  width: 100%;
-  top: 20px;
-  left: 20px;
+.header_social {
+  margin: -10px 10px 0;
+  font-size: 27px;
+
+  a {
+    color: #fff;
+    margin: 0 10px;
+  }
+
+  .fa {
+    vertical-align: middle;
+  }
 }
 
 .hamburger-icon {
-  top: 23px;
+  top: 22px;
   right: 20px;
 }
 
 @media (max-width: 959px) {
   .header .nav,
+  .header_social,
   .header .lang {
     display: none;
   }

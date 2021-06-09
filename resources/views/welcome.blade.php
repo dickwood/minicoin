@@ -3,17 +3,17 @@
 @section('content')
 
   <section class="topblock topblock-home">
-    <div class="hamburger-icon" id="hamburger-icon">
-      <span class="line line-1"></span>
-      <span class="line line-2"></span>
-      <span class="line line-3"></span>
+    <div class="sticky-top">
+      <div class="wrapper">
+        <div class="hamburger-icon" id="hamburger-icon">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </div>
+      </div>
     </div>
 
     <div class="mobile-nav js-scroll-nav">
-      <a href="/" class="logo">
-        <img src="/assets/front/img/logo.svg">
-      </a>
-
       <ul>
         <li><a href="#for-investors">{{__('Features')}}</a></li>
         <li><a href="#roadmap">{{__('Roadmap')}}</a></li>
@@ -29,6 +29,8 @@
           @include('shared/langSwitcher')
         </li>
       </ul>
+
+      @include('shared/social')
     </div>
 
     <div class="wrapper">
@@ -39,7 +41,7 @@
           </a>
         </div>
 
-        <nav class="nav" role="navigation">
+        <nav class="nav js-scroll-nav" role="navigation">
           <li><a href="#for-investors">{{__('Features')}}</a></li>
           <li><a href="#roadmap">{{__('Roadmap')}}</a></li>
           <li><a href="#tech">{{__('Technology')}}</a></li>
@@ -47,7 +49,7 @@
           <li><a href="#faq">{{__('FAQ')}}</a></li>
         </nav>
 
-        <ul class="nav">
+        <ul class="nav header_right">
           <li class="active">
             <a href="{{__('/docs/TBX-WhitePaper-Eng.pdf')}}" target="_blank">
               {{__('White Paper')}}
@@ -73,7 +75,7 @@
         </a>
 
         <a href="#" class="button js-modal-link" data-target="#join-queue-modal">
-          {{__('Join the Queue')}}
+          {{__('Join Private Sale')}}
         </a>
 
         <a href="https://t.me/Tokenbox" target="_blank" class="button button-info">
@@ -112,6 +114,8 @@
       </div>
     </div>
   </section>
+
+  <!-- @include('shared/video') -->
 
   <section class="get-notified get-notified-top">
     <div class="wrapper">
