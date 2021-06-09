@@ -6,10 +6,10 @@
   {!! seo_helper()->render() !!}
 
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
-  <link rel="icon" type="image/png" href="/favicon-144.png" sizes="195x195">
-  <link rel="apple-touch-icon" href="/favicon-195.png" sizes="144x144">
+  <link rel="icon" type="image/png" href="/favicon-144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/favicon-195.png?a" sizes="195x195">
 
-  <link rel="stylesheet" href="/assets/front/css/app.css">
+  <link rel="stylesheet" href="/assets/front/css/app.css?v=13">
 
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
@@ -35,6 +35,8 @@
       visibility: hidden;
     }
   </style>
+
+  <meta name="format-detection" content="telephone=no">
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,7 +65,9 @@
   @yield('content')
 
   @include('shared/footer')
+  @include('shared/terms')
+  @include('shared/privacy')
 
-  <script type="text/javascript" src="/assets/front/js/app.min.js"></script>
+  <script type="text/javascript" src="/assets/front/js/app.min.js?v=11"></script>
 </body>
 </html>
