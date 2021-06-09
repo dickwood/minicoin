@@ -1,7 +1,6 @@
 .topblock {
   z-index: 10;
-  background: $blue url("../img/grid-blue.svg") top center no-repeat;
-  background-size: cover;
+  background: $blue;
   color: white;
 
   h1 {
@@ -22,6 +21,39 @@
   }
 }
 
+.topblock_bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.topblock_bg:after {
+  position: absolute;
+  display: block;
+  top: -500px;
+  right: -500px;
+  bottom: -500px;
+  left: -500px;
+  animation: 400s linear rotate infinite alternate;
+  transform-origin: center;
+  background: url("../img/grid-blue.svg?v=3") top center no-repeat;
+  background-size: cover;
+  content: '';
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .topblock-home {
   margin-bottom: 150px;
   padding-bottom: 0;
@@ -29,14 +61,19 @@
   .countdown {
     margin: 25px 0 102px;
   }
+}
 
-  & + section {
-    margin-top: 340px;
 
-    @mixin bp tablet {
-      margin-top: 400px;
-    }
+.topblock-home + .get-notified {
+  margin-top: 340px;
+
+  @mixin bp tablet {
+    margin-top: 400px;
   }
+}
+
+.topblock-home + .section-video {
+  margin-top: 212px;
 }
 
 @mixin breakpoint tablet {
@@ -58,5 +95,13 @@
 }
 
 .topblock-ico {
-  padding-bottom: 100px;
+  padding-bottom: 150px;
+  background: #1f1f64;
+  background: linear-gradient(to bottom, rgb(28,28,77) 0%, rgb(37,37,142) 100%);
+
+  .topblock_bg:after {
+    opacity: 0.08;
+    background: url("../img/grid-white.svg?v=2") top center no-repeat;
+  }
 }
+

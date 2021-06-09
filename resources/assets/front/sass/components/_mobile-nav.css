@@ -1,15 +1,16 @@
 .mobile-nav {
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
   bottom: 0;
   display: none;
   overflow: auto;
-  width: 100%;
   text-align: center;
   background-color: $blue;
   z-index: 3;
   padding: 90px 0 20px;
+  -webkit-overflow-scrolling: touch; /* fix safari scroll bug */
 
   > ul {
     margin: 0 !important;
@@ -27,6 +28,10 @@
         border: none;
         color: white;
         text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .title {
@@ -37,7 +42,6 @@
       &.active {
         a {
           opacity: 1;
-          text-decoration: none;
           font-weight: 700;
         }
 
@@ -45,7 +49,6 @@
           opacity: 1;
           a {
             opacity: 1;
-            text-decoration: underline;
           }
         }
       }
@@ -54,5 +57,39 @@
 
   &.opened {
     display: block;
+  }
+
+  .dropdown {
+    margin-right: 0;
+  }
+
+  .dropdown .title:after {
+    top: 12px;
+    height: 12px;
+    width: 12px;
+    border-width: 2px;
+  }
+
+  .dropdown.opened {
+    .title:after {
+      top: 18px;
+    }
+  }
+
+  .dropdown-menu {
+    position: relative;
+    width:100%;
+    top: 0;
+    text-align: center;
+  }
+
+  .social {
+    margin-top: 30px;
+  }
+
+  @mixin bp desktop {
+    .social {
+      margin-top: 80px;
+    }
   }
 }

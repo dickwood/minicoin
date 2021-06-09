@@ -2,104 +2,91 @@
 
 @section('content')
   <section class="topblock topblock-ico">
-    <div class="hamburger-icon" id="hamburger-icon">
-      <span class="line line-1"></span>
-      <span class="line line-2"></span>
-      <span class="line line-3"></span>
-    </div>
+    <div class="topblock_bg"></div>
 
-    <div class="mobile-nav js-scroll-nav">
-      <a href="/" class="logo">
-        <img src="/assets/front/img/logo.svg">
-      </a>
+    @component('shared/header')
+      @slot('mobile')
+        <li><a href="/">{{__('Product')}}</a></li>
+        <li><a href="#token-distribution">{{__('Token Distribution')}}</a></li>
+        <li><a href="#join-crowdsale">{{__('How to Join')}}</a></li>
+        <li><a href="#documentation">{{__('Docs')}}</a></li>
+        <li><a href="#faq">{{__('FAQ')}}</a></li>
+      @endslot
 
-      <ul>
-        <li><a href="#raised-token">Raised</a></li>
-        <li><a href="#token-distribution">Token Distribution</a></li>
-        <li><a href="#fact-sheat">Fact Sheet</a></li>
-        <li><a href="#join-crowdsale">How to Join</a></li>
-        <li>
-          @include('shared/langSwitcher')
-        </li>
+      <nav class="nav js-scroll-nav" role="navigation">
+        <li><a href="/">{{__('Product')}}</a></li>
+        <li><a href="#token-distribution">{{__('Token Distribution')}}</a></li>
+        <li><a href="#join-crowdsale">{{__('How to Join')}}</a></li>
+        <li><a href="#documentation">{{__('Docs')}}</a></li>
+        <li><a href="#faq">{{__('FAQ')}}</a></li>
+      </nav>
+
+      <div class="header_social">
+        <a href="https://bitcointalk.org/index.php?topic=2243307.0" class="icon-bitcointalk" target="_blank"></a>
+        <a href="https://www.facebook.com/Tokenbox/" title="Facebook" class="link facebook" target="_blank"><i class="fa fa-facebook-square"></i></a>
+        <a href="https://twitter.com/tokenbox" class="link twitter" title="Twitter" target="_blank"><i class="fa fa-twitter-square"></i></a>
+        <a href="https://t.me/Tokenbox" class="link telegram" title="Telegram" target="_blank"><i class="fa fa-telegram"></i></a>
+      </div>
+
+      <ul class="nav">
+        <li>@include('shared/langSwitcher')</li>
       </ul>
-    </div>
+    @endcomponent
 
     <div class="wrapper">
-      <header class="header">
-        <div class="header_logo">
-          <a href="/" class="logo">
-            <img class="logo" src="/assets/front/img/logo.svg">
-          </a>
+      @if(app('request')->input('started'))
+        <h1>{{__('Tokenbox TGE crowdsale now live!')}}</h1>
+        <p style="opacity: 0;"">
+          {{__('Time left')}}:
+          <span class="inline-countdown">
+            <span data-key="days"></span>{{__('d')}}
+            <span data-key="hours"></span>{{__('h')}}
+            <span data-key="minutes"></span>{{__('m')}}
+            <span data-key="seconds"></span>{{__('s')}}
+          </span>
+        </p>
+
+        <div class="progress">
+          <div class="progress-current">
+            9,163,974 USD
+          </div>
+
+          <div class="progress-bar"></div>
+
+          <div class="progress-target">
+            20,000,000 USD
+          </div>
         </div>
 
-        <nav class="nav js-scroll-nav" role="navigation">
-          <li><a href="#raised-token">Raised</a></li>
-          <li><a href="#token-distribution">Token Distribution</a></li>
-          <li><a href="#fact-sheat">Fact Sheet</a></li>
-          <li><a href="#join-crowdsale">How to Join</a></li>
-        </nav>
-
-        <div class="three columns">
-          <ul class="nav">
-            <li>
-              @include('shared/langSwitcher')
-            </li>
-          </ul>
+        <div class="founded-money u-cf">
+          <div class="founded-money-participants">2563 {{__('participants')}}</div>
+          <div class="founded-money-usd">3,109,852</div>
+          <div class="founded-money-btc">21.1560</div>
+          <div class="founded-money-eth">2,357.0492</div>
         </div>
-      </header>
-
-      <div class="countdown">
-        <h1>
-          Tokenbox token crowdsale is now live!
-        </h1>
-
-        <div id="countdown"></div>
-
-        <a class="button">Join the Crowdsale!</a><a class="button button-info" href="/docs/TBX-WhitePaper-Eng.pdf">
-          <i class="fa fa-file-pdf-o"></i>
-          White Paper
+      @else
+        @component('shared/countdown')
+        @endcomponent
+      @endif
+      <div class="buttons">
+        <a class="button" href="#join-crowdsale">{{__('How to Join Crowdsale')}}</a><a class="button button-info" href="{{__('/docs/TBX-WhitePaper-Eng.pdf')}}">
+          <i class="fa fa-file-pdf-o" style="margin-right: 6px;"></i>
+          {{__('White Paper')}}
         </a>
       </div>
     </div>
   </section>
 
-  <section class="section raised-token" id="raised-token">
-    <div class="wrapper">
-      <h1> Total Raised </h1>
-      <p>Pay only for what you use. No setup fees, no minimum usage.</p>
-
-      <div class="progress">
-        <div class="progress-current">
-          9,163,974  USD
-        </div>
-
-        <div class="progress-bar"></div>
-
-        <div class="progress-target">
-          20,000,000  USD
-        </div>
-      </div>
-
-      <div class="founded-money u-cf">
-        <div class="founded-money-participants">2563 participants</div>
-        <div class="founded-money-usd">3,109,852</div>
-        <div class="founded-money-btc">21.1560</div>
-        <div class="founded-money-eth">2,357.0492</div>
-      </div>
-    </div>
-  </section>
 
   <section class="section section-distribution" id="token-distribution">
     <div class="wrapper">
-      <h1>Token Distribution</h1>
-      <p>Pay only for what you use. No setup fees, no minimum usage.</p>
+      <h1>{{__('Token Distribution')}}</h1>
+      <p>{{__('No more than 31,000,000 TBX will be released')}}</p>
 
       <div class="distribution">
         <div class="distribution-item distribution-item-token">
           <span>75%</span>
-          Token
-          Generation
-          Even
+          {{__('Token Generation Event')}}
         </div>
         <div class="distribution-pie">
           <div class="distribution-pie-icon">
@@ -107,86 +94,80 @@
         </div>
         <div class="distribution-item distribution-item-bounty">
           <span>5%</span>
-          Bounty
+          {{__('Bounty')}}
         </div>
         <div class="distribution-item distribution-item-team">
           <span>20%</span>
-          Team
+          {{__('Team')}}
         </div>
+      </div>
+
+      <div class="distibution-desc">
+        <a href="#faq">{{__('See detailed information')}}</a> {{__('in our FAQ section')}}.
       </div>
     </div>
   </section>
-
-  <!--<section class="section section-fact-sheet" id="fact-sheat">
-    <div class="wrapper">
-      <h1>Fact Sheet</h1>
-
-      <dl>
-        <dt>What is a Tokenbox token</dt>
-        <dd>Tokenbox token  represents the right to receive a part of company's profit. All token holders are eligible for obtaining dividends according to their stakes. Any number of tokens (100％) sold at the end of ICO have right to receive 20％ of company's profits</dd>
-      </dl>
-
-      <dl>
-        <dt>Payout Structure</dt>
-        <dd>According to the company bylaws, at the end of a financial year 20％ of the company's profit is transferred to an ETH wallet. The ETH is then redistributed to all holders of Tokenbox Tokens according to smart contract conditions</dd>
-      </dl>
-
-      <dl>
-        <dt>Symbol</dt>
-        <dd>TBX</dd>
-      </dl>
-
-      <dl>
-        <dt>Total Supply</dt>
-        <dd>31 000 000 (thrity one million) tokens</dd>
-      </dl>
-
-      <dl>
-        <dt>Adjustable</dt>
-        <dd>Yes. All unsold tokens will be burned</dd>
-      </dl>
-
-      <dl>
-        <dt>Initial Rate</dt>
-        <dd>Price per token, locked. 1 token = 1 USD</dd>
-      </dl>
-    </div>
-  </section>-->
-
-  @include('shared/faq')
 
   <section class="section section-join-crowdsale" id="join-crowdsale">
     <div class="wrapper">
-      <h1>How to Join the Crowdsale</h1>
-      <p>The process is simple and only takes ~5 minutes</p>
+      <h1>{{__('How to Join the Crowdsale')}}</h1>
+      <p>{{__('The process is simple and only takes ~5 minutes')}}</p>
 
-      <h2>4 easy steps</h2>
+      <h2>{{__('4 easy steps')}}</h2>
 
       <ol class="step-list">
         <li>
-          <span><b>Make</b> sure you comply with our Terms & Conditions.</span>
+          <span><b>{{__('Make sure')}}</b> {{__('you comply with our')}} <a href="#terms" class="js-modal-link">{{__('Terms & Conditions')}}</a>.</span>
         </li><li>
-          <span><b>Create</b> a Zerion account.</span>
+          <span>
+            <b>{{__('Create')}}</b>
+            {{__('a Zerion account (opens on 14 Nov 2017 12:00 UTC)')}}.
+          </span>
         </li><li>
-          <span><b>Choose currency</b> and the amount of Tokens you want topurchase.</span>
+          <span><b>{{__('Choose currency')}}</b> {{__('and the amount of Tokens you want to purchase')}}.</span>
         </li><li>
-          <span><b>Send</b> the required amount to the specified wallet address and wait for 6 confirmations.</span>
+          <span><b>{{__('Send')}}</b> {{__('the required amount to the specified wallet address and wait for 6 confirmations')}}.</span>
         </li><li>
-          <span><b>Congratulations!</b> You’ve just purchased TBX Tokens.</span>
+          <span><b>{{__('Congratulations!')}}</b><br>{{__("You've just purchased TBX Tokens.")}}</span>
         </li>
       </ol>
 
-      <a href="" class="button button-centred">Join the Crowdsale!</a>
+      <div class="button button-centred button-waiting" style="cursor: text">
+        {{__('14 November')}}
+      </div>
+      <!--<a href="" class="button button-centred">{{__('Join the Crowdsale!')}}</a>
 
       <div class="button-details">
-        Got questions?
-        <a href="">See the detailed guide.</a>
+        {{__('Got questions? <a href="">See the detailed guide.')}}</a>
       </div>
 
-      <p>If you decide to purchase more tokens, repeat steps 4-5 by signing-in to your dashboard.</p>
+      <p>{{__('If you decide to purchase more tokens, repeat steps 3-4 by signing-in to your <a href="#">dashboard</a>.')}}</p>-->
     </div>
   </section>
 
+  <section>
+    <div class="documentation" id="documentation">
+      <h1>{{__('Documentation')}}</h1>
+
+      <div class="documentation_list">
+        <a href="{{__('/docs/TBX-WhitePaper-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('White Paper')}}
+        </a><a href="{{__('/docs/Tokenbox-LightPaper-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('Lite Paper')}}
+        </a><a href="{{__('/docs/Tokenbox-Onepager-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('One-Pager')}}
+        </a><a href="{{__('/docs/Tokenbox-Overview-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('Tokenbox Overview')}}
+        </a><a href="{{__('/docs/Tokenbox-BusinessOverview-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('Business Overview')}}
+        </a><a href="{{__('/docs/Tokenbox-Presentation-Eng.pdf')}}" target="_blank">
+          <i class="fa fa-file-pdf-o"></i>{{__('Product Presentation')}}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  @include('shared/faq')
   @include('shared/powered')
   @include('shared/roadmap')
   @include('shared/team')
