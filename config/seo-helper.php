@@ -5,8 +5,8 @@ return [
      |  Title
      | -----------------------------------------------------------------
      */
-    'title' => [
-        'default'   => 'Tokenbox — Unique ecosystem for crypto investors, traders and funds',
+    'title'       => [
+        'default'   => 'Tokenbox — Uniting Crypto',
         'site-name' => '',
         'separator' => '—',
         'first'     => false,
@@ -18,16 +18,16 @@ return [
      | -----------------------------------------------------------------
      */
     'description' => [
-        'default'   => 'ᐅᐅᐅ Tokenbox is an №❶ ecosystem for crypto-investors, traders and funds. ᐅᐅᐅ ICO starts in 20 days!',
-        'max'       => 155,
+        'default' => 'ᐅᐅᐅ Tokenbox is a №❶ ecosystem for crypto-investors, traders and funds. ᐅᐅᐅ TGE/ICO has ended.',
+        'max'     => 155,
     ],
 
     /* -----------------------------------------------------------------
      |  Keywords
      | -----------------------------------------------------------------
      */
-    'keywords'  => [
-        'default'   => [
+    'keywords'    => [
+        'default' => [
             //
         ],
     ],
@@ -36,7 +36,7 @@ return [
      |  Miscellaneous
      | -----------------------------------------------------------------
      */
-    'misc'      => [
+    'misc'        => [
         'canonical' => true,
         'robots'    => config('app.env') !== 'production', // Tell robots not to index the content if it's not on production
         'default'   => [
@@ -50,7 +50,7 @@ return [
      |  Webmaster Tools
      | -----------------------------------------------------------------
      */
-    'webmasters' => [
+    'webmasters'  => [
         'google'    => '',
         'bing'      => '',
         'alexa'     => '',
@@ -62,12 +62,13 @@ return [
      |  Open Graph
      | -----------------------------------------------------------------
      */
-    'open-graph' => [
+    'open-graph'  => [
         'enabled'     => true,
         'prefix'      => 'og:',
         'type'        => 'website',
-        'title'       => 'Tokenbox - Unique ecosystem for crypto investors, traders and funds',
-        'description' => 'Tokenbox is an №1 ecosystem for crypto-investors, traders and funds.',
+        'title'       => 'Tokenbox - Uniting Crypto',
+        'description' => 'ᐅᐅᐅ Tokenbox is a №❶ ecosystem for crypto-investors, traders and funds. ᐅᐅᐅ TGE/ICO has ended.',
+        'image'       => 'https://tokenbox.io/tokenbox-ograph.png',
         'site-name'   => '',
         'properties'  => [
             //
@@ -79,12 +80,13 @@ return [
      | -----------------------------------------------------------------
      |  Supported card types : 'app', 'gallery', 'photo', 'player', 'product', 'summary', 'summary_large_image'.
      */
-    'twitter' => [
+    'twitter'     => [
         'enabled' => true,
         'prefix'  => 'twitter:',
         'card'    => 'summary',
         'site'    => 'tokenbox',
-        'title'   => 'Tokenbox - Unique ecosystem for crypto investors, traders and funds',
+        'title'   => 'Tokenbox - Uniting Crypto',
+        'image'   => 'https://tokenbox.io/favicon-228.png',
         'metas'   => [
             //
         ],
@@ -94,7 +96,7 @@ return [
      |  Analytics
      | -----------------------------------------------------------------
      */
-    'analytics' => [
+    'analytics'   => [
         'google' => '', // UA-XXXXXXXX-X
     ],
 ];

@@ -1,45 +1,104 @@
 .header {
+  margin: 0 0 25px;
   padding: 20px 0;
+}
+
+.header-wrapper {
+  background: $blue url("../img/grid-blue.svg?v=3") center;
+}
+
+.header .wrapper {
   display: flex;
   justify-content: space-between;
-
-  @mixin bp desktop {
-    padding: 45px 0;
-    height: 150px;
-  }
 }
 
 .header_logo {
-  width: 200px;
+  margin-right: 20px;
 }
 
-.mobile-nav .logo,
+.header_right {
+  .dropdown {
+    margin-left: 10px;
+  }
+
+  .header_social {
+    margin: 0;
+
+    a, .fa {
+      display: block;
+    }
+  }
+}
+
+.header_main-nav {
+  vertical-align: top;
+}
+
 .hamburger-icon {
   position: absolute;
   z-index: 4;
 }
 
-.mobile-nav .logo {
-  width: 100%;
-  top: 20px;
-  left: 20px;
+.header_social {
+  margin: -10px 10px 0;
+  font-size: 28px;
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+
+    transition: .3s opacity;
+    -webkit-transform: translateZ(0); /* fix safari opacity hover bug */
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .fa {
+    vertical-align: middle;
+  }
+
+  .telegram {
+    font-size: 26px;
+  }
 }
 
 .hamburger-icon {
-  top: 23px;
+  top: 22px;
   right: 20px;
 }
 
-@media (max-width: 959px) {
+.topblock-ico .header {
+  position: relative;
+  background: #25258e;
+}
+
+@media (max-width: 1139px) {
   .header .nav,
+  .header_social,
   .header .lang {
     display: none;
   }
 }
 
-@mixin bp desktop {
+@media (min-width: 1140px) {
   .hamburger-icon {
     display: none;
+  }
+}
+
+@mixin bp desktop {
+  .header {
+    margin: 0 0 74px;
+    padding: 45px 0 38px;
+  }
+
+  .hamburger-icon {
+    top: 47px;
+    right: 20px;
   }
 
   .mobile-nav {

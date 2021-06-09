@@ -30,7 +30,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    height: 55%;
+    height: 33.5%;
     width: 100%;
     border-radius: 10px 10px 0 0;
     background-color: $red;
@@ -64,6 +64,10 @@
 
     .time {
       font-weight: 400;
+    }
+
+    ul {
+      list-style: disc outside;
     }
   }
 
@@ -131,7 +135,7 @@
 
     .title {
       font-size: 1.6rem;
-      max-width: 300px;
+      max-width: 250px;
     }
 
     &:before {
@@ -179,11 +183,20 @@
   }
 
   .timeline-bar {
+    height: calc(100% - 60px);
     left: 50%;
     margin-left: -5px;
 
     .current {
-      height: 52%;
+      height: 37%;
+    }
+  }
+}
+
+@media (min-width: 940px) {
+  .milestone {
+    .title {
+      max-width: 300px;
     }
   }
 }

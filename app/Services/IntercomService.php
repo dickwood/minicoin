@@ -13,7 +13,10 @@ class IntercomService
      */
     public function __construct()
     {
-        $this->client = new IntercomClient(config('intercom.access_token'), null);
+        $this->client = new IntercomClient(
+            config('intercom.access_token'),
+            null
+        );
     }
 
     /**
@@ -22,7 +25,7 @@ class IntercomService
      *
      * @return mixed
      */
-    public function userCreate($email, array $parameters)
+    public function userCreate($email, array $parameters = [])
     {
         $options = $this->prepareOptions($email, $parameters);
 
@@ -35,7 +38,7 @@ class IntercomService
      *
      * @return mixed
      */
-    public function leadCreate($email, array $parameters)
+    public function leadCreate($email, array $parameters = [])
     {
         $options = $this->prepareOptions($email, $parameters);
 
@@ -45,18 +48,45 @@ class IntercomService
     protected function prepareOptions($email, $parameters)
     {
         $customAttributes = [
-            'company' => array_get($parameters, 'company'),
-            'amount'  => array_get($parameters, 'amount'),
-            'tags'    => array_get($parameters, 'tag'),
+            'company'      => array_get($parameters, 'company'),
+            'amount'       => array_get($parameters, 'amount'),
+            'amount_wire'  => array_get($parameters, 'amount_wire'),
+            'tags'         => array_get($parameters, 'tag'),
+            'country_code' => array_get($parameters, 'country_code'),
+            'timezone'     => array_get($parameters, 'timezone'),
         ];
 
         return array_filter([
+            'id'                => array_get($parameters, 'id'),
             'email'             => $email,
             'name'              => array_get($parameters, 'name'),
             'phone'             => array_get($parameters, 'phone'),
-//            'tags'              => array_get($parameters, 'tag'),
             'custom_attributes' => array_filter($customAttributes),
         ]);
     }
 
+    public function findLeadByEmail($email)
+    {
+        $leads = $this->client->leads->getLeads([
+            'email' => $email,
+        ]);
+
+        return array_get($leads->contacts, '0');
+    }
+
+    public function convertLead($lead)
+    {
+        if ($lead && isset($lead->user_id)) {
+            return $this->client->leads->convertLead([
+                'contact' => [
+                    'id' => $lead->id
+                ],
+                'user'    => [
+                    'user_id' => $lead->user_id
+                ]
+            ]);
+        }
+
+        return null;
+    }
 }
