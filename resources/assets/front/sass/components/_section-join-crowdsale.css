@@ -23,7 +23,6 @@ body {
     margin: 0 0 32px;
     min-height: 60px;
     display: flex;
-    align-items: center;
     list-style: none;
     counter-increment: join-counter;
 
@@ -36,10 +35,17 @@ body {
       width: 55px;]
       flex-shrink: 0;
     }
-  }
 
-  li:last-child {
-    content: '';
+    &:last-child {
+      &:before {
+        content: '';
+        background: no-repeat url(../img/check-green.svg);
+        background-size: 35px auto;
+        width: 35px;
+        height: 25px;
+        margin: 0 25px 0 0;
+      }
+    }
   }
 }
 
@@ -72,6 +78,15 @@ body {
       width: 80px;
       text-align: center;
     }
+
+    &:last-child {
+      &:before {
+        width: 45px;
+        height: 31px;
+        margin: 0 35px 0 47px;
+        background-size: 45px auto;
+      }
+    }
   }
 
   .step-list li:nth-child(3) ~ li {
@@ -80,7 +95,7 @@ body {
 
   .step-list:after {
     position: absolute;
-    content: "4 easy steps";
+    content: attr(data-title);
     top: 174px;
     right: 0;
     left: 0;

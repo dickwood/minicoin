@@ -5,10 +5,13 @@
 @import "base";
 @import "grid";
 @import "fonts";
+
 @import "background-icon";
 
 @import "vendors/slick";
+@import "vendors/intl-tel-input";
 
+@import "components/icons";
 @import "components/dropdown";
 @import "components/tooltip";
 @import "components/hamburger";
@@ -16,7 +19,7 @@
 @import "components/header";
 @import "components/socials";
 @import "components/buttons";
-@import "components/countdown";
+/* @import "components/countdown"; */
 @import "components/nav";
 @import "components/logo";
 @import "components/big-title";
@@ -39,7 +42,6 @@
 @import "components/media";
 @import "components/footer";
 
-@import "components/raised-token";
 @import "components/progress";
 @import "components/distribution";
 @import "components/section-fact-sheet";
@@ -49,6 +51,11 @@
 @import "components/lang";
 @import "components/modal";
 @import "components/notification";
+@import "components/video";
+@import "components/documentation";
+@import "components/powered-by-logos";
+@import "components/inner-link";
+@import 'components/section-benefits';
 
 .pay-with {
   margin-top: 110px;
@@ -122,60 +129,4 @@ section h1 {
 
 .section-faq {
   border-top: 1px solid #f6f6f8;
-}
-
-.section-powered-by {
-  background: #f6f6f8;
-}
-
-.section-powered-by_head {
-  h1, p {
-    color: #abb4bb;
-  }
-}
-
-.powered-by-logos {
-  margin: auto;
-  text-align: center;
-
-  @mixin lp tablet {
-    > * {
-      display: block;
-      margin-top: 70px;
-    }
-  }
-
-  @mixin bp tablet {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-@mixin bp desktop {
-  .section-powered-by .wrapper {
-    display: flex;
-    max-width: 940px;
-  }
-
-  .section-powered-by_head {
-    max-width: 205px;
-
-    h1, p {
-      text-align: right;
-    }
-
-    h1 {
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-
-  .powered-by-logos {
-    flex-grow: 1;
-    margin-left: 100px;
-  }
 }
